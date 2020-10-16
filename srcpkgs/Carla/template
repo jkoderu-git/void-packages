@@ -20,7 +20,8 @@ checksum=27def29cc408d5c74926e8d0ef3a77fd76fee1e4f2797f840e999e6376a5be03
 python_version=3
 
 case $XBPS_TARGET_MACHINE in
-	x86_64* | i686*);;
+	x86_64 | i686);;
+	x86_64-musl) make_build_args+=" USING_JUCE=false";;  # No musl support for JUCE
 	*) make_build_args+=" NOOPT=true"
 	   make_install_args+=" NOOPT=true";;
 esac

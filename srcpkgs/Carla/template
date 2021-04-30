@@ -21,7 +21,7 @@ python_version=3
 
 case $XBPS_TARGET_MACHINE in
 	x86_64 | i686);;
-	x86_64-musl) make_build_args+=" USING_JUCE=false";;  # No musl support for JUCE
+	*-musl) make_build_args+=" USING_JUCE=false";;  # No musl support for JUCE
 	*) make_build_args+=" NOOPT=true"
 	   make_install_args+=" NOOPT=true";;
 esac

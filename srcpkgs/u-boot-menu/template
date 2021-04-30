@@ -1,6 +1,6 @@
 # Template file for 'u-boot-menu'
 pkgname=u-boot-menu
-version=0.1
+version=0.2
 revision=2
 conf_files="/etc/default/extlinux"
 short_desc="Create an u-boot menu with currently available kernels"

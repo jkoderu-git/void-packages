@@ -1,6 +1,6 @@
 # Template file for 'fuse-overlayfs'
 pkgname=fuse-overlayfs
-version=1.1.2
+version=1.5.0
 revision=1
 build_style=gnu-configure
 hostmakedepends="autoconf automake pkg-config"
@@ -10,7 +10,7 @@ maintainer="Cameron Nemo <cnemo@tutanota.com>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/containers/fuse-overlayfs"
 distfiles="https://github.com/containers/fuse-overlayfs/archive/v${version}.tar.gz"
-checksum=1c0fa67f806c44d5c51f4bce02fdcb546137a2688a8de76d93d07b79defc9cac
+checksum=6c81b65b71067b303aaa9871f512c2cabc23e2b793f19c6c854d01a492b5a923
 
 pre_configure() {
 	./autogen.sh

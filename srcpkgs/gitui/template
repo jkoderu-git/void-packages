@@ -1,14 +1,16 @@
 # Template file for 'gitui'
 pkgname=gitui
-version=0.9.1
+version=0.14.0
 revision=1
 build_style=cargo
+hostmakedepends="pkg-config python3"
+makedepends="libxcb-devel libgit2-devel"
 short_desc="Blazing fast terminal-ui for git"
 maintainer="Jan Christian Grünhage <jan.christian@gruenhage.xyz>"
 license="MIT"
 homepage="https://github.com/extrawurst/gitui"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=2112575a5ec65f744572d38df9f4f79e7547fc2139093a6c9cf2e9ad85bdf547
+checksum=4312e6028c314bde12c7515a76aaa1fae518c8cefa6ab2e3a1a70c680e7dcb6a
 
 post_install() {
 	vlicense LICENSE.md

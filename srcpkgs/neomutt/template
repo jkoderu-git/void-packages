@@ -1,7 +1,7 @@
 # Template file for 'neomutt'
 pkgname=neomutt
-version=20200925
-revision=1
+version=20210205
+revision=2
 wrksrc="neomutt-${version}"
 create_wrksrc=true
 build_wrksrc="$wrksrc"
@@ -14,7 +14,7 @@ conf_files="/etc/neomuttrc"
 hostmakedepends="docbook-xsl gettext libxslt perl tcl w3m"
 makedepends="aspell-devel gdbm-devel gettext-devel gpgme-devel libidn-devel
  rocksdb-devel tdb-devel
- libnotmuch-devel libressl-devel libsasl-devel lua54-devel zlib-devel"
+ libnotmuch-devel openssl-devel libsasl-devel lua54-devel zlib-devel"
 depends="mime-types"
 short_desc="Mutt with misc fixes and feature patches"
 maintainer="Toyam Cox <Vaelatern@voidlinux.org>"
@@ -23,7 +23,7 @@ homepage="https://neomutt.org/"
 _test_files_hash=8629adab700a75c54e8e28bf05ad092503a98f75
 distfiles="https://github.com/neomutt/neomutt/archive/${version}.tar.gz
  https://github.com/neomutt/neomutt-test-files/archive/${_test_files_hash}.tar.gz"
-checksum="dcec98ea2454d7695ff92184c33a0051c2b3c46320f81f7889c4580c943140dd
+checksum="77e177780fc2d8abb475d9cac4342c7e61d53c243f6ce2f9bc86d819fc962cdb
  a53d6447cf4e8f60bd9a3caf68a1cfe1bfda878b5bcb8c60b965b5214de73ff9"
 python_version=3
 
@@ -41,7 +41,7 @@ esac
 
 post_install() {
 	# move dist to examples dir
-	vsconf contrib/gpg.rc Muttrc.gpg.dist
+	vsconf contrib/samples/gpg.rc Muttrc.gpg.dist
 }
 
 pre_check() {

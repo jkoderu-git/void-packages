@@ -1,3 +1,18 @@
+diff --git base/allocator/partition_allocator/partition_freelist_entry.h base/allocator/partition_allocator/partition_freelist_entry.h
+index f7703ee..57b6e6c 100644
+--- base/allocator/partition_allocator/partition_freelist_entry.h
++++ base/allocator/partition_allocator/partition_freelist_entry.h
+@@ -19,8 +19,10 @@
+ // Disabled on ARM64 Macs, as this crashes very early (crbug.com/1172236).
+ // TODO(lizeb): Enable in as many configurations as possible.
+ #if !(defined(OS_MAC) && defined(ARCH_CPU_ARM64))
++#if !defined(__powerpc64__)
+ #define PA_HAS_FREELIST_HARDENING
+ #endif
++#endif
+ 
+ namespace base {
+ namespace internal {
 diff --git sandbox/linux/bpf_dsl/seccomp_macros.h sandbox/linux/bpf_dsl/seccomp_macros.h
 index a6aec544e..2a4a7f1bc 100644
 --- sandbox/linux/bpf_dsl/seccomp_macros.h
@@ -54,6 +69,17 @@ index cdce9bf8..73d77dda 100644
    defined(_M_IX86) || defined(_M_X64)
  #define ABSL_HAVE_UNSCALED_CYCLECLOCK_IMPLEMENTATION 1
  #else
+--- third_party/abseil-cpp/absl/debugging/internal/stacktrace_config.h
++++ third_party/abseil-cpp/absl/debugging/internal/stacktrace_config.h
+@@ -64,7 +64,7 @@
+ #elif defined(__i386__) || defined(__x86_64__)
+ #define ABSL_STACKTRACE_INL_HEADER \
+   "absl/debugging/internal/stacktrace_x86-inl.inc"
+-#elif defined(__ppc__) || defined(__PPC__)
++#elif (defined(__ppc__) || defined(__PPC__)) && defined(__GLIBC__)
+ #define ABSL_STACKTRACE_INL_HEADER \
+   "absl/debugging/internal/stacktrace_powerpc-inl.inc"
+ #elif defined(__aarch64__)
 diff --git third_party/breakpad/BUILD.gn third_party/breakpad/BUILD.gn
 index f9a60e37..25f3a0b7 100644
 --- third_party/breakpad/BUILD.gn

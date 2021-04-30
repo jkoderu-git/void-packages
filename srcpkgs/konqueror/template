@@ -1,6 +1,6 @@
 # Template file for 'konqueror'
 pkgname=konqueror
-version=20.08.1
+version=21.04.0
 revision=1
 build_style=cmake
 configure_args="-DDESKTOPTOJSON_EXECUTABLE=/usr/bin/desktoptojson"
@@ -14,11 +14,15 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later, LGPL-2.1-or-later"
 homepage="https://kde.org/applications/internet/org.kde.konqueror"
 distfiles="${KDE_SITE}/release-service/${version}/src/konqueror-${version}.tar.xz"
-checksum=e3aac062d9e431e63a861ecf5a1d577b11a154faaed5bd95ef6b69b4fc8a34e9
+checksum=e1fce3cf8f448d2657c3839f8f85c248b656e5a9307f546c746717b05b89b412
 
-case "$XBPS_TARGET_MACHINE" in
-	arm*) broken="depends on qt5-webengine";;
-esac
+pre_check() {
+	export QT_QPA_PLATFORM=offscreen
+}
+
+do_check() {
+	:
+}
 
 konqueror-devel_package() {
 	short_desc+=" - development files"

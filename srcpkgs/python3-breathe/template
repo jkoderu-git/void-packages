@@ -1,18 +1,20 @@
 # Template file for 'python3-breathe'
 pkgname=python3-breathe
-version=4.22.1
-revision=2
+version=4.29.1
+revision=1
 wrksrc="breathe-${version}"
 build_style=python3-module
 _pyreqs="python3-Sphinx python3-docutils python3-six"
 hostmakedepends="python3-setuptools ${_pyreqs}"
 depends="${_pyreqs} doxygen"
+checkdepends="python3-pytest"
 short_desc="ReStructuredText and Sphinx bridge to Doxygen"
 maintainer="Andrew J. Hesford <ajh@sideband.org>"
 license="BSD-3-Clause"
 homepage="https://github.com/michaeljones/breathe"
-distfiles="https://github.com/michaeljones/breathe/archive/v${version}.tar.gz"
-checksum=b2cde521dd05bca0171b6008456d8f6fb66fd6231fbffa2802f3db8d3d5648a2
+changelog="https://raw.githubusercontent.com/michaeljones/breathe/master/README.rst"
+distfiles="${homepage}/archive/v${version}.tar.gz"
+checksum=72cf9ade88f3e9163e0730e4089fde7b92464f691d29250019983457a977df44
 
 post_install() {
 	vlicense LICENSE

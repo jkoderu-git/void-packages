@@ -1,23 +1,17 @@
 # Template file for 'cargo-crev'
 pkgname=cargo-crev
-version=0.17.0
+version=0.19.2
 revision=1
 build_style=cargo
 make_install_args="--path ./cargo-crev"
 hostmakedepends="pkg-config"
-makedepends="libressl-devel"
+makedepends="openssl-devel"
 short_desc="Cryptographically verifiable code review system for cargo"
 maintainer="Jan Christian Grünhage <jan.christian@gruenhage.xyz>"
 license="MPL-2.0, MIT, Apache-2.0"
 homepage="https://github.com/crev-dev/cargo-crev"
 distfiles="${homepage}/archive/v${version}.tar.gz"
-checksum=340efb023985c3950e9cf1eafe386248aecd3b8000d97563d274b38fa63633cc
-
-pre_build() {
-	# Versions in lockfile are incompatible with current libressl
-	cargo update --package openssl-sys:0.9.55 --precise 0.9.58
-	cargo update --package openssl:0.10.26 --precise 0.10.30
-}
+checksum=d4b1ab0089ce25d73f2516209d80102e7e674dc851cf49f08e34a963d16e97ad
 
 post_install() {
 	vlicense LICENSE-APACHE

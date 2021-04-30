@@ -1,6 +1,6 @@
 # Template file for 'krfb'
 pkgname=krfb
-version=20.08.1
+version=21.04.0
 revision=1
 build_style=cmake
 hostmakedepends="extra-cmake-modules qt5-qmake qt5-host-tools python3 kdoctools
@@ -14,4 +14,4 @@ maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later, GFDL-1.2-only, LGPL-2.1-or-later"
 homepage="https://kde.org/applications/en/system/org.kde.krfb"
 distfiles="${KDE_SITE}/release-service/${version}/src/${pkgname}-${version}.tar.xz"
-checksum=a80b9bab47f2a7299e33b0e2a10b117605ec1cc572ca72e914c7f01dde383eda
+checksum=8f1e9efb25d115a4b37037ff50d9123fc477318521a690db610b5bf41c084e6e

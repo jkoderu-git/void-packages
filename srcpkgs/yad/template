@@ -1,17 +1,18 @@
 # Template file for 'yad'
 pkgname=yad
-version=7.2
+version=9.1
 revision=1
 build_style=gnu-configure
 configure_args="--enable-icon-browser"
 hostmakedepends="automake gettext-devel glib-devel intltool pkg-config"
 makedepends="gtk+3-devel webkit2gtk-devel gtksourceview-devel gspell-devel"
-short_desc="Yet Another Dialog"
+short_desc="Yet Another Dialog - create/interact with GTK+ dialog boxes"
 maintainer="Benjamin Slade <slade@lambda-y.net>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/v1cont/yad"
+changelog="https://raw.githubusercontent.com/v1cont/yad/master/NEWS"
 distfiles="https://github.com/v1cont/yad/releases/download/v${version}/yad-${version}.tar.xz"
-checksum=d60b7408066edb45381b8f13301eccc0808b8b0defe4f22e589078b1d5927308
+checksum=288142d338c055d3839083d8146c6f270bd5a17f78ff9cd2a3c41a8cf31a0e92
 
 pre_configure() {
 	autoreconf -ivf
@@ -21,5 +22,4 @@ pre_configure() {
 post_install() {
 	# Avoid conflict with disputils
 	mv "${DESTDIR}"/usr/bin/{,yad-}pfd
-	mv "${DESTDIR}"/usr/share/man/man1/{,yad-}pfd.1
 }

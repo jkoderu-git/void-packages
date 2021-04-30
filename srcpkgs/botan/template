@@ -1,14 +1,14 @@
 # Template file for 'botan'
 pkgname=botan
 version=2.16.0
-revision=1
+revision=3
 wrksrc="${pkgname^}-${version}"
 build_style=gnu-makefile
 pycompile_module="botan.py"
 hostmakedepends="doxygen python3"
-makedepends="libressl-devel bzip2-devel liblzma-devel sqlite-devel zlib-devel"
+makedepends="openssl-devel bzip2-devel liblzma-devel sqlite-devel zlib-devel"
 short_desc="Crypto library written in C++"
-maintainer="Jürgen Buchmüller <pullmoll@t-online.de>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 license="BSD-2-Clause"
 homepage="https://botan.randombit.net/"
 distfiles="https://botan.randombit.net/releases/Botan-${version}.tar.xz"
@@ -87,7 +87,6 @@ post_install() {
 
 botan-doc_package() {
 	short_desc+=" - documentation"
-	archs=noarch
 	pkg_install() {
 		vmove usr/share/doc
 	}

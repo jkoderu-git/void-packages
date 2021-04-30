@@ -1,15 +1,16 @@
 # Template file for 'cpp-utilities'
 pkgname=cpp-utilities
-version=5.6.0
+version=5.10.2
 revision=1
 build_style=cmake
 configure_args="-DBUILD_SHARED_LIBS:BOOL=ON"
+hostmakedepends="pkg-config"
 short_desc="C++ library for argument parsing, IO, parsing and more"
 maintainer="Andrew J. Hesford <ajh@sideband.org>"
 license="GPL-2.0-only"
 homepage="https://github.com/Martchus/cpp-utilities"
 distfiles="https://github.com/Martchus/${pkgname}/archive/v${version}.tar.gz"
-checksum=31fd1de5279c1267c049bf8d900a85d38af11d3c8757a934e694dab46f52fc56
+checksum=65c34689a2d88dc0f7bb70e5bd5a0128ee6e97746504d10239d9e6820a835d54
 
 cpp-utilities-devel_package() {
 	short_desc+=" - development files"

@@ -1,15 +1,14 @@
 # Template file for 'perl-File-Rename'
 pkgname=perl-File-Rename
 version=1.13
-revision=1
-archs=noarch
+revision=2
 wrksrc="${pkgname/perl-/}-${version}"
 build_style=perl-module
 hostmakedepends="perl-Module-Build"
 makedepends="perl"
 depends="${makedepends}"
 short_desc="Perl module to rename filenames"
-maintainer="Jürgen Buchmüller <pullmoll@t-online.de>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 homepage="https://metacpan.org/release/File-Rename"
 license="Artistic-1.0-Perl"
 distfiles="${CPAN_SITE}/File/${pkgname/perl-/}-${version}.tar.gz"

@@ -1,6 +1,6 @@
 # Template file for 'inih'
 pkgname=inih
-version=51
+version=53
 revision=1
 wrksrc=inih-r${version}
 build_style=meson
@@ -10,7 +10,7 @@ maintainer="Anthony Iliopoulos <ailiop@altatus.com>"
 license="BSD-3-Clause"
 homepage="https://github.com/benhoyt/inih"
 distfiles="${homepage}/archive/r${version}.tar.gz"
-checksum=132361da6d3172760a40319722b50244aee1b7ce7077a0dd8805881e6a8ea4aa
+checksum=01b0366fdfdf6363efc070c2f856f1afa33e7a6546548bada5456ad94a516241
 
 post_install() {
 	vlicense LICENSE.txt

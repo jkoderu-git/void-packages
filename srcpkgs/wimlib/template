@@ -1,6 +1,6 @@
 # Template file for 'wimlib'
 pkgname=wimlib
-version=1.13.2
+version=1.13.4
 revision=1
 build_style=gnu-configure
 hostmakedepends="pkg-config"
@@ -10,7 +10,8 @@ maintainer="Andrew Benson <abenson+void@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://wimlib.net/"
 distfiles="${homepage}/downloads/wimlib-${version}.tar.gz"
-checksum=7295be7ef00d265aef4090c9d26af82097db651c5f8399db9d44c60f47f5a945
+checksum=4b87dd0ad9cc1a58cee5721afebb98011dab549e72f2b55533f315f08b2ede12
+make_check=extended
 
 wimlib-devel_package() {
 	short_desc+=" - development files"

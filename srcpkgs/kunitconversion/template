@@ -1,6 +1,6 @@
 # Template file for 'kunitconversion'
 pkgname=kunitconversion
-version=5.75.0
+version=5.81.0
 revision=1
 build_style=cmake
 hostmakedepends="kcoreaddons extra-cmake-modules qt5-host-tools ki18n-devel
@@ -11,7 +11,7 @@ maintainer="John <me@johnnynator.dev>"
 license="LGPL-2.1-or-later"
 homepage="https://invent.kde.org/frameworks/kunitconversion"
 distfiles="${KDE_SITE}/frameworks/${version%.*}/${pkgname}-${version}.tar.xz"
-checksum=bb0587276d081163cb86328370c77d9ebc109fc3b633f46af299656de900a36a
+checksum=3efc21a1438875429620a725e4bb4b8dbe40e2aa5f041f5d6557e2e1461131bd
 
 kunitconversion-devel_package() {
 	short_desc+=" - development"

@@ -1,6 +1,6 @@
 # Template file for 'MoarVM'
 pkgname=MoarVM
-version=2020.09
+version=2021.04
 revision=1
 build_style=configure
 configure_script="perl Configure.pl"
@@ -15,6 +15,6 @@ license="Artistic-2.0"
 homepage="https://moarvm.org"
 changelog="https://github.com/MoarVM/MoarVM/raw/master/docs/ChangeLog"
 distfiles="https://moarvm.org/releases/MoarVM-${version}.tar.gz"
-checksum=48b21922f8843d53a3bf4c04ef357f1d9d2d8cd96f63c5eb59df72eceda6f922
+checksum=e094728536da421dc9a3e8651160ab6a5e8d0eafa834e8953feecf33285a11e7
 nocross=yes
 shlib_provides="libmoar.so"

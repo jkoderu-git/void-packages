@@ -1,20 +1,20 @@
 # Template file for 'erlang'
 pkgname=erlang
-version=23.1.1
+version=23.3.1
 revision=1
 create_wrksrc=yes
 build_wrksrc="otp-OTP-${version}"
 build_style=gnu-configure
 make_install_target="install install-docs"
 hostmakedepends="autoconf libxslt perl tar"
-makedepends="libressl-devel ncurses-devel unixodbc-devel zlib-devel"
+makedepends="openssl-devel ncurses-devel unixodbc-devel zlib-devel"
 short_desc="Concurrent functional programming language developed by Ericsson"
 maintainer="Leah Neukirchen <leah@vuxu.org>"
 license="Apache-2.0"
 homepage="http://www.erlang.org/"
 changelog="https://github.com/erlang/otp/releases"
 distfiles="https://github.com/erlang/otp/archive/OTP-${version}.tar.gz"
-checksum=8094484d94bce21d76f3a6c6137098839e7bc121e170c08b472f980296684ac9
+checksum=a5a067a3b17bbef8511f2c056957925b666670b6f2cdaf645e1bc28ce3dd3517
 subpackages="erlang-doc"
 
 if [ -z "$CROSS_BUILD" ]; then
@@ -24,7 +24,7 @@ if [ -z "$CROSS_BUILD" ]; then
 fi
 
 case "$XBPS_TARGET_MACHINE" in
-	*-musl) configure_args+=" --disable-hipe" ;;
+	ppc64*|*-musl) configure_args+=" --disable-hipe" ;;
 esac
 
 pre_configure() {
@@ -59,7 +59,6 @@ post_install() {
 erlang-doc_package() {
 	short_desc="Erlang programming language documentation and examples"
 	depends="${sourcepkg}-${version}_${revision}"
-	archs=noarch
 	pkg_install() {
 		vmove usr/lib/erlang/doc
 		for i in $(cd ${DESTDIR}; find usr/lib/erlang -type d \( -path '*/examples' -o -path '*/doc/html' \))

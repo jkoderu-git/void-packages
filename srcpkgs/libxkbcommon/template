@@ -1,6 +1,6 @@
 # Template file for 'libxkbcommon'
 pkgname=libxkbcommon
-version=1.0.1
+version=1.2.1
 revision=1
 wrksrc="${pkgname}-${pkgname#lib}-${version}"
 build_style=meson
@@ -10,11 +10,11 @@ hostmakedepends="pkg-config bison wayland-protocols wayland-devel"
 makedepends="xkeyboard-config libxcb-devel wayland-devel wayland-protocols"
 depends="xkeyboard-config"
 short_desc="Library to handle keyboard descriptions"
-maintainer="Orphaned <orphan@voidlinux.org>"
+maintainer="Isaac Freund <ifreund@ifreund.xyz>"
 license="MIT"
 homepage="https://xkbcommon.org/"
 distfiles="https://github.com/xkbcommon/libxkbcommon/archive/xkbcommon-${version}.tar.gz"
-checksum=270e2ad4ce5699f633e49042114cb68a5697fa1ed45b65c1d96a833cfac20954
+checksum=50684541c11686203650f6ac8fe9b4b0343158fb7c54fbb0c86147f1ff5a5dbc
 
 post_install() {
 	vlicense LICENSE

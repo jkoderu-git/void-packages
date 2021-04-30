@@ -1,6 +1,6 @@
 # Template file for 'kicad-packages3D'
 pkgname=kicad-packages3D
-version=5.1.7
+version=5.1.10
 revision=1
 build_style=cmake
 depends="kicad"
@@ -8,5 +8,5 @@ short_desc="Kicad 3D model libraries"
 maintainer="Urs Schulz <voidpkgs@ursschulz.de>"
 license="CC-BY-SA-4.0"
 homepage="http://kicad-pcb.org"
-distfiles="https://github.com/kicad/kicad-packages3D/archive/${version}.tar.gz>${pkgname}-${version}.tar.gz"
-checksum=5420ed6a9cebb15c70210c633d0710f0a89ec43ca2ef111c0439930c8156006c
+distfiles="https://gitlab.com/kicad/libraries/${pkgname}/-/archive/${version}/${pkgname}-${version}.tar.gz"
+checksum=b79f8de319a463d12972253a125ece118a8000533061d443d5730e1498822bff

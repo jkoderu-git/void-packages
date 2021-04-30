@@ -1,19 +1,23 @@
 # Template file for 'python3-trimesh'
 pkgname=python3-trimesh
-version=3.8.10
-revision=2
+version=3.9.13
+revision=1
 wrksrc="trimesh-${version}"
 build_style=python3-module
 hostmakedepends="python3-setuptools"
 makedepends="python3-numpy"
-depends="python3-numpy python3-scipy python3-networkx python3-lxml python3-pyglet python3-shapely python3-rtree python3-Pillow python3-svg.path python3-jsonschema python3-psutil python3-chardet python3-sympy python3-msgpack python3-pycollada python3-requests"
-checkdepends="python3-pytest python3-scipy python3-networkx python3-lxml python3-pyglet python3-shapely python3-rtree python3-Pillow python3-svg.path python3-jsonschema python3-psutil python3-chardet python3-sympy python3-msgpack python3-pycollada python3-requests"
+depends="python3-numpy python3-scipy python3-networkx python3-lxml
+ python3-pyglet python3-shapely python3-rtree python3-Pillow python3-svg.path
+ python3-jsonschema python3-psutil python3-chardet python3-sympy python3-msgpack
+ python3-pycollada python3-requests"
+# unit tests fail on x86 https://github.com/mikedh/trimesh/issues/690
+checkdepends="$depends python3-pytest"
 short_desc="Python3 library for loading and using triangular meshes"
 maintainer="Karl Nilsson <karl.robert.nilsson@gmail.com>"
 license="MIT"
 homepage="https://trimsh.org/"
 distfiles="https://github.com/mikedh/trimesh/archive/${version}.tar.gz"
-checksum=fff2660f58132a50a9e20d8d0e7f64ba021e96f0367cf7ebf9b6da0bbb494a5b
+checksum=3f2419b0b03ac683e518bf4e8442f0804aeb4d708ae5e4aec25f2590e5725b71
 
 post_install() {
 	vlicense LICENSE.md

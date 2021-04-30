@@ -1,6 +1,6 @@
 # Template file for 'acpica-utils'
 pkgname=acpica-utils
-version=20200925
+version=20210331
 revision=1
 archs="i686* x86_64* aarch64*"
 wrksrc="acpica-unix-${version}"
@@ -10,7 +10,7 @@ maintainer="Anthony Iliopoulos <ailiop@altatus.com>"
 license="GPL-2.0-only, BSD-3-Clause"
 homepage="https://www.acpica.org/"
 distfiles="https://acpica.org/sites/acpica/files/acpica-unix-${version}.tar.gz"
-checksum=d44388e21e3d2e47c6d39e9c897935d3f775f04fec76271dcba072c74f834589
+checksum=b49237a2c3df58b57310612ec3a6ebee69e1a525b5efeec7152faf32a03b7068
 
 do_build() {
 	vsed -e 's/-Werror//g' \

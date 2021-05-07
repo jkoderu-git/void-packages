@@ -19,10 +19,6 @@ distfiles="https://github.com/falkTX/Carla/archive/v${version}.tar.gz"
 checksum=27def29cc408d5c74926e8d0ef3a77fd76fee1e4f2797f840e999e6376a5be03
 python_version=3
 
-case $XBPS_TARGET_MACHINE in
-	*-musl) makedepends+=" libexecinfo-devel";;
-esac
-
 if [ "$CROSS_BUILD" ]; then
 	hostmakedepends+=" Carla-devel"
 fi

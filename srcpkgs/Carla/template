@@ -20,8 +20,7 @@ checksum=27def29cc408d5c74926e8d0ef3a77fd76fee1e4f2797f840e999e6376a5be03
 python_version=3
 
 case $XBPS_TARGET_MACHINE in
-	# No musl support for JUCE
-	*-musl) make_build_args+=" USING_JUCE=false";;
+	*-musl) makedepends+=" libexecinfo-devel";;
 esac
 
 if [ "$CROSS_BUILD" ]; then
